@@ -12,17 +12,17 @@
 <body>
 
     <main>
-        <div class="tela1 oculto">
+        <div class="tela1">
             <h1>Jogo da adivinhação</h1>
             <p>Adivinhe o número entre 0 e 10</p>
 
             <form >
-                <input type="number" min="0" max="10" step="1">
-                <button>Tentar</button>
+                <input id="inputNumber" type="number" min="0" max="10" step="1">
+                <button onclick="handleClick(event)">Tentar</button>
             </form>
         </div>
 
-        <div class="tela2">
+        <div class="tela2 oculto">
             <h2>Acertou em 3 tentativa</h2>
             <button>Jogar novamente</button>            
         </div>
