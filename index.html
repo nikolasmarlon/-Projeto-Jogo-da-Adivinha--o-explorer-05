@@ -12,13 +12,20 @@
 <body>
 
     <main>
-        <h1>Jogo da adivinhação</h1>
-        <p>Adivinhe o número entre 0 e 10</p>
+        <div class="tela1 oculto">
+            <h1>Jogo da adivinhação</h1>
+            <p>Adivinhe o número entre 0 e 10</p>
 
-        <form >
-            <input type="number" min="0" max="10" step="1">
-            <button>Tentar</button>
-        </form>
+            <form >
+                <input type="number" min="0" max="10" step="1">
+                <button>Tentar</button>
+            </form>
+        </div>
+
+        <div class="tela2">
+            <h2>Acertou em 3 tentativa</h2>
+            <button>Jogar novamente</button>            
+        </div>
     </main>
     
 </body>

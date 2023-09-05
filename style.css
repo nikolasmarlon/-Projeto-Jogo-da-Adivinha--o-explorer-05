@@ -16,7 +16,18 @@ body, button, input{
     font-family: 'DM Sans', sans-serif;
 }
 
+button{
+    background-color: #7879f1;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0 .4rem .4rem 0;
+    cursor: pointer;
+    transition: background .3s;
+}
 
+button:hover{
+    background-color: #5e5ec0;
+}
 
 body {
     background: linear-gradient(287.56deg, #c2e9fb 0%, #a1c4fd 100%);
@@ -26,7 +37,9 @@ body {
     height: 100vh;
 }
 
-
+.oculto{
+    display: none;
+}
 
 
 
@@ -42,6 +55,9 @@ main{
     text-align: center;
 }
 
+
+
+/* Início tela 1 */
 h1{
     font-family: 'Montserrat', sans-serif;
     font-size: 2.4rem;
@@ -74,9 +90,26 @@ input{
     border-radius: .4rem 0 0 .4rem;
 }
 
-button{
-    background-color: #7879f1;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 0 .4rem .4rem 0;
+
+
+/* Fim tela 1 */
+
+
+
+
+/* Início tela 2 */
+
+.tela2 h2 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-bottom: 3.3rem;
 }
+
+.tela2 button{
+    
+    border-radius: .4rem;
+}
+
+
+
+/* Fim tela 2 */
