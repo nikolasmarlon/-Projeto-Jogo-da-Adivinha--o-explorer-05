@@ -12,6 +12,10 @@ function handleClick(event){
     tentativas ++
 
     if (Number(inputNumber) != numeroSorteado) {
+
+        document.querySelector('.tela1 h2').innerHTML = `
+        Você errou ${tentativas}X!
+        `
         console.log(`
         Seu chute ${inputNumber}
         Número sorteado ${numeroSorteado}
@@ -25,6 +29,12 @@ function handleClick(event){
 
         document.querySelector('.tela1').classList.add('oculto')
         document.querySelector('.tela2').classList.remove('oculto')
+
+        document.querySelector('.tela2 h2').innerHTML = `
+        Seu chute ${inputNumber}
+        Número sorteado ${numeroSorteado}
+        Você acertou em ${tentativas}!
+        `
 
     }
 }
