@@ -5,6 +5,10 @@ const tela1 = document.querySelector('.tela1')
 const tela2 = document.querySelector('.tela2')
 
 
+// capturando eventos do html (Dom)
+const btnJogar = document.querySelector('#btn-jogar')
+const btnVoltar = document.querySelector('#btn-voltar')
+
 
 // função callback
 function sortearNumero(event){
@@ -30,8 +34,7 @@ function sortearNumero(event){
         
     } else {        
 
-        tela1.classList.add('oculto')
-        tela2.classList.remove('oculto')
+        trocarTela()
 
         document.querySelector('.tela2 h2').innerHTML = 
         `
@@ -45,21 +48,23 @@ function sortearNumero(event){
 
 
 
-// capturando eventos do html (Dom)
-const btnJogar = document.querySelector('#btn-jogar')
-const btnVoltar = document.querySelector('#btn-voltar')
+function reseteClique(){
+    trocarTela()
+    tentativas = 0
+    document.querySelector('.tela1 h2').innerHTML = ''
+    inputNumber.value = ""
+}
 
 
+function trocarTela(){
+    tela1.classList.toggle('oculto')
+    tela2.classList.toggle('oculto')
+}
 
+
+//eventos 
 // dois argumentos ( evento, e a ação)
 btnJogar.addEventListener('click', sortearNumero)
 
 // evento do botão voltar
-btnVoltar.addEventListener('click', function(){
-    tela1.classList.remove('oculto')
-    tela2.classList.add('oculto')
-    tentativas = 0
-    document.querySelector('.tela1 h2').innerHTML = ''
-    inputNumber.value = ""
-    
-})
+btnVoltar.addEventListener('click', reseteClique)
