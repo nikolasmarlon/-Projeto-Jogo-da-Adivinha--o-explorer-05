@@ -8,7 +8,7 @@ const tela2 = document.querySelector('.tela2')
 // capturando eventos do html (Dom)
 const btnJogar = document.querySelector('#btn-jogar')
 const btnVoltar = document.querySelector('#btn-voltar')
-
+const inputNumber = document.querySelector("#inputNumber")
 
 // função callback
 function sortearNumero(event){
@@ -16,34 +16,39 @@ function sortearNumero(event){
     event.preventDefault() // Não faça o padrão deste evento ( Evento do form )
     
     const numeroSorteado = Math.round(Math.random() * 10)
-    const inputNumber = document.querySelector("#inputNumber").value
+    
     
     console.log(numeroSorteado, inputNumber)
     
+    numeroDigitado = parseInt(inputNumber.value)
     
-    
-    tentativas ++
+    if(!isNaN(numeroDigitado)){
+        tentativas ++
+    }    
 
+    if(isNaN(numeroDigitado) || numeroDigitado < 0 || numeroDigitado > 10){
+        document.querySelector('.tela1 h2').textContent = 'Digite um número válido entre 0 e 10'
+    } else if (numeroDigitado != numeroSorteado) {
 
-    if (Number(inputNumber) != numeroSorteado) {
-
-        document.querySelector('.tela1 h2').innerHTML = `
+        document.querySelector('.tela1 h2').textContent = `
         Você errou ${tentativas}X!
         `
-        console.log(numeroSorteado, inputNumber)
+        console.log(numeroSorteado, numeroDigitado)
         
     } else {        
 
         trocarTela()
 
-        document.querySelector('.tela2 h2').innerHTML = 
+        document.querySelector('.tela2 h2').textContent = 
         `
-        Você chutou ${inputNumber}!
+        Você chutou ${numeroDigitado}!
         Número sorteado ${numeroSorteado}
         Você acertou em ${tentativas} tentativa(s)!
         `
 
     }
+
+    
 }
 
 
